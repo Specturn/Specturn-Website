@@ -66,13 +66,11 @@ const CursorFollower: React.FC = () => {
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (target.tagName === 'A' || target.tagName === 'BUTTON') {
-        follower.style.width = '30px';
-        follower.style.height = '30px';
-        follower.style.borderRadius = '0';
+        follower.style.width = '25px';
+        follower.style.height = '25px';
       } else {
         follower.style.width = '20px';
         follower.style.height = '20px';
-        follower.style.borderRadius = '50%';
       }
     };
 
@@ -84,7 +82,13 @@ const CursorFollower: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    document.body.style.cursor = 'none';
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile) {
+      document.body.style.cursor = 'none';
+    } else {
+      document.body.style.cursor = 'auto';
+    }
+
     return () => {
       document.body.style.cursor = 'auto';
     };
