@@ -1,0 +1,237 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=matter@400,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #000000;
+  --primary-hover: #333333;
+  --secondary: #666666;
+  --accent: #999999;
+  --text: #000000;
+  --text-light: #666666;
+  --background: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Matter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Footer Styles */
+.footer-logo {
+  filter: brightness(0) invert(1);
+}
+
+.footer-link {
+  @apply flex items-center space-x-4 text-white hover:opacity-80 transition-opacity;
+}
+
+.footer-link svg {
+  @apply stroke-[1.5];
+}
+
+.footer-link span {
+  @apply uppercase text-sm tracking-wide;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  50% {
+    transform: translateY(0) translateX(10px);
+  }
+  75% {
+    transform: translateY(10px) translateX(5px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes patternMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-float {
+  animation: float 15s ease-in-out infinite;
+}
+
+.animate-float-delay-1 {
+  animation-delay: -5s;
+}
+
+.animate-float-delay-2 {
+  animation-delay: -10s;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* Services Section Styles */
+.services-pattern {
+  background-color: #050505;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: particleMove 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes particleMove {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(-30px, -30px) rotate(360deg);
+  }
+}
+
+.service-card {
+  @apply border border-white p-8 relative;
+  clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bbbcbe;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9aa0a6;
+}
+
+/* Aurora Effect Animations */
+@keyframes aurora-shift-1 {
+  0%, 100% {
+    transform: translate(0%, 0%) rotate(0deg);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translate(-10%, 10%) rotate(-5deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(10%, -10%) rotate(5deg);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translate(-5%, -5%) rotate(-2deg);
+    opacity: 0.7;
+  }
+}
+
+@keyframes aurora-shift-2 {
+  0%, 100% {
+    transform: translate(0%, 0%) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translate(10%, -5%) rotate(5deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-10%, 5%) rotate(-5deg);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translate(5%, 10%) rotate(2deg);
+    opacity: 0.4;
+  }
+}
+
+@keyframes aurora-shift-3 {
+  0%, 100% {
+    transform: translate(0%, 0%) rotate(0deg);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translate(-5%, -10%) rotate(-2deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(5%, 10%) rotate(2deg);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translate(10%, -5%) rotate(5deg);
+    opacity: 0.7;
+  }
+}
+
+.animate-aurora-shift-1 {
+  animation: aurora-shift-1 15s ease-in-out infinite;
+}
+
+.animate-aurora-shift-2 {
+  animation: aurora-shift-2 18s ease-in-out infinite;
+}
+
+.animate-aurora-shift-3 {
+  animation: aurora-shift-3 21s ease-in-out infinite;
+}
