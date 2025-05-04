@@ -9,30 +9,17 @@ const CursorFollower: React.FC = () => {
 
     let mouseX = 0;
     let mouseY = 0;
-    let currentX = 0;
-    let currentY = 0;
-    let animationFrameId: number;
 
     const handleMouseMove = (e: MouseEvent) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
-    };
-
-    const animate = () => {
-      currentX += (mouseX - currentX) * 0.15;
-      currentY += (mouseY - currentY) * 0.15;
-      if (follower) {
-        follower.style.transform = `translate3d(${currentX - 10}px, ${currentY - 10}px, 0)`;
-      }
-      animationFrameId = requestAnimationFrame(animate);
+      follower.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
     };
 
     window.addEventListener('mousemove', handleMouseMove);
-    animate();
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
@@ -72,6 +59,37 @@ const CursorFollower: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const follower = followerRef.current;
+    if (!follower) return;
+
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'A' || target.tagName === 'BUTTON') {
+        follower.style.width = '30px';
+        follower.style.height = '30px';
+        follower.style.borderRadius = '0';
+      } else {
+        follower.style.width = '20px';
+        follower.style.height = '20px';
+        follower.style.borderRadius = '50%';
+      }
+    };
+
+    window.addEventListener('mouseover', handleMouseOver);
+
+    return () => {
+      window.removeEventListener('mouseover', handleMouseOver);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.style.cursor = 'none';
+    return () => {
+      document.body.style.cursor = 'auto';
+    };
+  }, []);
+
   return (
     <div
       ref={followerRef}
@@ -86,6 +104,7 @@ const CursorFollower: React.FC = () => {
         zIndex: 9999,
         mixBlendMode: 'difference',
         transition: 'background 0.2s',
+        transform: 'translate(-50%, -50%)',
       }}
     />
   );
