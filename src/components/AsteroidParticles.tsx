@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 const AsteroidParticles: React.FC = () => {
   // Create an array of 30 asteroid particles
+  // Create an array of 30 asteroid particles
   const particles = Array.from({ length: 30 }, (_, i) => ({
     id: i,
     size: Math.random() * 4 + 2, // Random size between 2-6px

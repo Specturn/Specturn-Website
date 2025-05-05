@@ -1,0 +1,31 @@
+.services-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.services-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.services-section p {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .services-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .services-section p {
+    font-size: 1rem;
+  }
+}
