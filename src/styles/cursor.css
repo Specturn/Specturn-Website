@@ -11,6 +11,7 @@
 
 @media (max-width: 768px) {
   .cursor-follower {
-    display: none; /* Ensure it's hidden on mobile */
+    display: none !important; /* Ensure it's hidden on mobile */
+    visibility: hidden !important; /* Ensure it's not visible */
   }
 }
