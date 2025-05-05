@@ -51,11 +51,11 @@ const JourneySection: React.FC = () => {
   return (
     <section className="bg-white py-16">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-[80px] leading-none font-clash text-black text-center mb-20">
+        <h2 className="text-[80px] leading-none font-clash text-black text-center mb-10 lg:mb-20">
           Our Creative Journey
         </h2>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           {/* Logo Column */}
           <div className="flex justify-center">
             <img 
