@@ -8,11 +8,13 @@ function updateCursorFollower() {
   if (isMobileDevice()) {
     if (cursorFollower) {
       cursorFollower.style.display = 'none'; // Hide cursor follower on mobile
+      cursorFollower.style.visibility = 'hidden'; // Ensure it's not visible
       document.body.style.cursor = 'default'; // Reset cursor style
     }
   } else {
     if (cursorFollower) {
       cursorFollower.style.display = 'block'; // Show cursor follower on desktop
+      cursorFollower.style.visibility = 'visible'; // Ensure it's visible
       document.body.style.cursor = 'none'; // Use custom cursor
     }
   }
