@@ -38,7 +38,7 @@ const ServicesSection: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-[120px] leading-none font-clash text-white/100 mb-8"
+            className="text-[60px] md:text-[80px] lg:text-[120px] leading-none font-clash text-white/100 mb-8"
           >
             Services
           </motion.h2>
