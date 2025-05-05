@@ -6,9 +6,15 @@ function isMobileDevice() {
 
 function updateCursorFollower() {
   if (isMobileDevice()) {
-    cursorFollower.style.display = 'none'; // Hide cursor follower on mobile
+    if (cursorFollower) {
+      cursorFollower.style.display = 'none'; // Hide cursor follower on mobile
+      document.body.style.cursor = 'default'; // Reset cursor style
+    }
   } else {
-    cursorFollower.style.display = 'block'; // Show cursor follower on desktop
+    if (cursorFollower) {
+      cursorFollower.style.display = 'block'; // Show cursor follower on desktop
+      document.body.style.cursor = 'none'; // Use custom cursor
+    }
   }
 }
 
