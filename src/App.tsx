@@ -9,12 +9,12 @@ import ContactPage from './pages/ContactPage';
 import Privacy from './pages/Privacy';
 import Accessibility from './pages/Accessibility';
 import Terms from './pages/Terms';
-import CursorFollower from './components/CursorFollower';
+import CustomCursor from './components/CustomCursor';
 
 function App() {
   return (
     <Router>
-      <CursorFollower />
+      <CustomCursor />
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow">
