@@ -14,8 +14,8 @@ Specturn began with a simple idea: to create visually stunning, highly functiona
 
 ## Our Services at a Glance:
 
-Custom Web Design & Branding – From logos to full-scale sites, we craft visually compelling, user-friendly designs that strengthen your brand and engage audiences.
+* Custom Web Design & Branding – From logos to full-scale sites, we craft visually compelling, user-friendly designs that strengthen your brand and engage audiences.
 
-High-Performance Development – We build fast, responsive, and secure websites (business sites, e-commerce, portfolios) optimized for seamless navigation on any device.
+* High-Performance Development – We build fast, responsive, and secure websites (business sites, e-commerce, portfolios) optimized for seamless navigation on any device.
 
-Expert SEO Optimization – Leveraging keyword strategy and technical best practices, we boost your search rankings, drive organic traffic, and ensure long-term digital success.
+* Expert SEO Optimization – Leveraging keyword strategy and technical best practices, we boost your search rankings, drive organic traffic, and ensure long-term digital success.
