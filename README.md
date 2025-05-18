@@ -7,7 +7,7 @@ Creative, clean, and captivating websites built with purpose.<br>
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/specturnmedia)
 [![X](https://img.shields.io/badge/X-black.svg?logo=X&logoColor=white)](https://x.com/SpecturnMedia) 
 [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:specturnmedia@gmail.com) <br>
-Check out the website <a href="specturn.in">Here</a>.
+Check out the Website <a href="specturn.in">Here</a>.
 
 ## Our Creative Journey:
 Specturn began with a simple idea: to create visually stunning, highly functional websites that blend creativity with usability. We design clean, user-friendly, and performance-optimized websites for businesses, freelancers, and entrepreneurs. Every project is an opportunity to innovate, ensuring responsive, accessible, and SEO-friendly designs that leave a lasting impact.
