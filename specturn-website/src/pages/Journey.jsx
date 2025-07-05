@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion';
 import Header from '../components/Header';
-import JourneySection from '../components/JourneySection';
+import JourneySectionFallback from '../components/JourneySectionFallback';
 import Footer from '../components/Footer';
+import SimpleBackground from '../components/SimpleBackground';
 import '../App.css';
 
 export default function Journey() {
+  console.log('Journey page is rendering'); // Debug log
+  
   return (
     <div className="min-h-screen">
       <Header />
@@ -12,7 +15,7 @@ export default function Journey() {
       <main className="pt-20">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-background via-background to-muted">
-          <div className="aurora"></div>
+          <SimpleBackground />
           <div className="container mx-auto px-4 text-center relative z-10">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
@@ -34,7 +37,7 @@ export default function Journey() {
         </section>
 
         {/* Journey Section */}
-        <JourneySection />
+        <JourneySectionFallback />
       </main>
 
       <Footer />

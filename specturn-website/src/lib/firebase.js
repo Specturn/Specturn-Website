@@ -28,7 +28,8 @@ export const db = getFirestore(app);
 // Owner UIDs for admin access
 export const OWNER_UIDS = [
   "admin-uid-1", // Replace with actual Firebase User ID for owner 1
-  "admin-uid-2"  // Add more OWNER_UIDs if there are multiple owners
+  "admin-uid-2",  // Add more OWNER_UIDs if there are multiple owners
+  "2UXeKIovhBfMTskAjZWxLDxZf313" // Added as admin ID
 ];
 
 export default app;

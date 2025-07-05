@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import ServicesSection from '../components/ServicesSection';
 import Footer from '../components/Footer';
+import SimpleBackground from '../components/SimpleBackground';
 import '../App.css';
 
 export default function Services() {
@@ -12,7 +13,7 @@ export default function Services() {
       <main className="pt-20">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-background via-background to-muted">
-          <div className="aurora"></div>
+          <SimpleBackground />
           <div className="container mx-auto px-4 text-center relative z-10">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}

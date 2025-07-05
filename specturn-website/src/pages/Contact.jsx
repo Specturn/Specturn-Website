@@ -8,6 +8,7 @@ import { Alert, AlertDescription } from '../components/ui/alert';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import SimpleBackground from '../components/SimpleBackground';
 import '../App.css';
 
 export default function Contact() {
@@ -20,6 +21,8 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
 
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/mqabgnjz";
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -30,21 +33,35 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setSubmitMessage('Thank you for your message! We\'ll get back to you soon.');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitting(false);
-    }, 1000);
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setSubmitMessage("Thank you for your message! We'll get back to you soon.");
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setSubmitMessage("Sorry, there was a problem sending your message. Please try again later.");
+      }
+    } catch (error) {
+      setSubmitMessage("Sorry, there was a problem sending your message. Please try again later.");
+    }
+    setIsSubmitting(false);
   };
 
   const contactInfo = [
     {
       icon: Mail,
       title: 'Email',
-      content: 'specturnmedia@gmail.com',
-      href: 'mailto:specturnmedia@gmail.com'
+      content: 'contact@specturn.in',
+      href: 'mailto:contact@specturn.in'
     },
     {
       icon: Phone,
@@ -67,7 +84,7 @@ export default function Contact() {
       <main className="pt-20">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-background via-background to-muted">
-          <div className="aurora"></div>
+          <SimpleBackground />
           <div className="container mx-auto px-4 text-center relative z-10">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
@@ -240,8 +257,8 @@ export default function Contact() {
                     <h3 className="font-clash font-semibold mb-3">Business Hours</h3>
                     <div className="space-y-2 font-matter text-muted-foreground">
                       <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                      <p>Saturday: 10:00 AM - 4:00 PM</p>
-                      <p>Sunday: Closed</p>
+                      <p>Saturday - 10:00 AM - 4:00 PM</p>
+                      <p>Sunday - Appointment Only</p>
                     </div>
                   </CardContent>
                 </Card>

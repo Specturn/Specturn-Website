@@ -21,7 +21,6 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
-      <div className="aurora"></div>
       
       {/* Header */}
       <header className="border-b bg-background/80 backdrop-blur-sm">

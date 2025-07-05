@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "specturn-website": "file:specturn-website"
+  }
+}

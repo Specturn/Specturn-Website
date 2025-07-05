@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter, Mail } from 'lucide-react';
 import '../App.css';
+import specturnLogo from '../assets/specturn-logo.png';
 
 export default function Footer() {
   const socialLinks = [
@@ -24,7 +25,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img 
-                src="/src/assets/white.jpeg" 
+                src={specturnLogo} 
                 alt="Specturn Logo" 
                 className="w-8 h-8 rounded-full"
               />

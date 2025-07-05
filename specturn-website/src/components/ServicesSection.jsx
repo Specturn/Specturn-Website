@@ -26,11 +26,8 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-20 relative overflow-hidden">
-      {/* Particle Background */}
-      <div className="particles"></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="py-20 relative">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
