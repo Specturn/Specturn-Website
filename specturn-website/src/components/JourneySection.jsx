@@ -1,17 +1,18 @@
 import { motion } from 'framer-motion';
 import '../App.css';
 // Try alternative image import
-import specturnLogo from '../assets/specturn-logo.png';
+import blackLogo from '../assets/black.jpeg';
 
 export default function JourneySection() {
   console.log('JourneySection component is rendering'); // Debug log
 
   return (
-    <section id="journey-section" className="py-20 bg-muted/30 relative overflow-hidden">
+    <section id="journey-section" className="py-20 bg-muted/30 relative overflow-hidden"
+      style={{ minHeight: '100vh', paddingTop: '72px' }}>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="animate-fadeIn">
+          <div className="animate-fadeIn text-left flex flex-col justify-center h-full">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-clash font-bold mb-4">
               Our Creative Journey
             </h2>
@@ -24,16 +25,13 @@ export default function JourneySection() {
           </div>
 
           {/* Logo */}
-          <div className="flex justify-center lg:justify-end animate-fadeIn">
-            <div className="relative">
+          <div className="flex items-center justify-center h-full animate-fadeIn">
+            <div className="relative flex items-center justify-center">
               <img
-                src={specturnLogo}
+                src={blackLogo}
                 alt="Specturn Logo"
-                className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96"
-                onLoad={() => console.log('Image loaded successfully')}
-                onError={(e) => console.error('Image failed to load:', e)}
+                style={{ width: '360px', height: '360px', borderRadius: '50%', objectFit: 'cover' }}
               />
-              
               {/* Simple Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full blur-2xl -z-10"></div>
             </div>

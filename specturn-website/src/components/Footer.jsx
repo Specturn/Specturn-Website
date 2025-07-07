@@ -1,7 +1,45 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter, Mail } from 'lucide-react';
 import '../App.css';
-import specturnLogo from '../assets/specturn-logo.png';
+import blackLogo from '../assets/black.jpeg';
+import { useState } from 'react';
+
+// ShuffleText component for hover effect
+function ShuffleText({ text }) {
+  const [display, setDisplay] = useState(text);
+  const [intervalId, setIntervalId] = useState(null);
+
+  function shuffle(str) {
+    const arr = str.split('');
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr.join('');
+  }
+
+  function handleMouseEnter() {
+    let count = 0;
+    const id = setInterval(() => {
+      setDisplay((prev) => shuffle(text));
+      count++;
+      if (count > 10) {
+        clearInterval(id);
+        setDisplay(text);
+      }
+    }, 30);
+    setIntervalId(id);
+  }
+
+  function handleMouseLeave() {
+    if (intervalId) clearInterval(intervalId);
+    setDisplay(text);
+  }
+
+  return (
+    <span onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{ cursor: 'pointer' }}>{display}</span>
+  );
+}
 
 export default function Footer() {
   const socialLinks = [
@@ -24,10 +62,10 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <img 
-                src={specturnLogo} 
-                alt="Specturn Logo" 
-                className="w-8 h-8 rounded-full"
+              <img
+                src={blackLogo}
+                alt="Specturn Logo"
+                style={{ width: '60px', height: '60px', borderRadius: '50%', objectFit: 'cover' }}
               />
               <span className="text-xl font-clash font-bold">Specturn</span>
             </div>
@@ -49,7 +87,7 @@ export default function Footer() {
                   rel={link.platform !== 'Email' ? 'noopener noreferrer' : undefined}
                 >
                   <link.icon className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  <span className="font-matter">{link.name} ({link.platform})</span>
+                  <span className="font-matter"><ShuffleText text={`${link.name} (${link.platform})`} /></span>
                 </a>
               ))}
             </div>
@@ -65,7 +103,7 @@ export default function Footer() {
                   to={link.path}
                   className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors font-matter"
                 >
-                  {link.name}
+                  <ShuffleText text={link.name} />
                 </Link>
               ))}
             </div>

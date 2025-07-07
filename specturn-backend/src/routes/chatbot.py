@@ -5,11 +5,11 @@ import os
 chatbot_bp = Blueprint('chatbot', __name__)
 
 # Configure Gemini API
-GEMINI_API_KEY = "AIzaSyAuL9WsDZ12Og7Ej-18DXfDSBgjMK5fxYU"
+GEMINI_API_KEY = "AIzaSyCNzfcCET78OnIMNQd_ZPbBpE2PSwdXA20"
 genai.configure(api_key=GEMINI_API_KEY)
 
 # Initialize the model
-model = genai.GenerativeModel('gemini-pro')
+model = genai.GenerativeModel('models/gemini-1.5-pro-latest')
 
 # Specturn knowledge base
 SPECTURN_KNOWLEDGE = """
@@ -84,4 +84,10 @@ def chat():
             'response': "I'm experiencing some technical difficulties. Please contact us directly at specturnmedia@gmail.com for immediate assistance.",
             'status': 'error'
         }), 500
+
+if __name__ == "__main__":
+    # List available Gemini models for debugging
+    print("Available Gemini models:")
+    for model in genai.list_models():
+        print(model)
 
