@@ -51,7 +51,8 @@ export default function Chatbot() {
 
     try {
       // Call the chatbot API
-      const response = await fetch('/api/chatbot', {
+      const apiUrl = import.meta.env.VITE_API_URL;
+      const response = await fetch(`${apiUrl}/api/chatbot`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
