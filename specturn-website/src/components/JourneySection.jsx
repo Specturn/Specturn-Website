@@ -26,11 +26,12 @@ export default function JourneySection() {
 
           {/* Logo */}
           <div className="flex items-center justify-center h-full animate-fadeIn">
-            <div className="relative flex items-center justify-center">
+            <div className="relative flex items-center justify-center overflow-hidden w-[360px] h-[360px] rounded-full">
               <img
                 src={blackLogo}
                 alt="Specturn Logo"
-                style={{ width: '360px', height: '360px', borderRadius: '50%', objectFit: 'cover' }}
+                className="object-cover w-full h-full rounded-full"
+                style={{ transform: 'scale(1.20)' }}
               />
               {/* Simple Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full blur-2xl -z-10"></div>

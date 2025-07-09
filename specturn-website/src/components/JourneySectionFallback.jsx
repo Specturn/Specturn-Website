@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import '../App.css';
+import whiteImage from '../assets/white.jpeg';
 
 export default function JourneySectionFallback() {
   return (
@@ -33,8 +34,8 @@ export default function JourneySectionFallback() {
             className="flex justify-center lg:justify-end"
           >
             <div className="relative">
-              <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-primary/10 rounded-full flex items-center justify-center">
-                <span className="text-4xl font-clash font-bold text-primary">S</span>
+              <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-primary/10 rounded-full flex items-center justify-center overflow-hidden">
+                <img src={whiteImage} alt="Specturn Journey" className="object-cover w-full h-full rounded-full transform scale-125" />
               </div>
               
               {/* Simple Glow Effect */}

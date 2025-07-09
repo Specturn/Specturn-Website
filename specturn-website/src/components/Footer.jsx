@@ -65,7 +65,7 @@ export default function Footer() {
               <img
                 src={blackLogo}
                 alt="Specturn Logo"
-                style={{ width: '60px', height: '60px', borderRadius: '50%', objectFit: 'cover' }}
+                style={{ width: '43.2px', height: '43.2px', borderRadius: '50%', objectFit: 'cover', transform: 'scale(1.2)' }}
               />
               <span className="text-xl font-clash font-bold">Specturn</span>
             </div>
