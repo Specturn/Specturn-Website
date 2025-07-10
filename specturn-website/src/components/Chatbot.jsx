@@ -5,6 +5,8 @@ import { Input } from '../components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { X, Send, Minimize2, Maximize2, Bot, User, Loader2, MapPin, Clock, AlertCircle, Palette, Code, Search } from 'lucide-react';
 import '../App.css';
+import blackLogo from '../assets/black.jpeg';
+import whiteLogo from '../assets/white.jpeg';
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -117,7 +119,7 @@ export default function Chatbot() {
           style={{ background: 'transparent' }}
         >
           <img 
-            src="/src/assets/black.jpeg" 
+            src={blackLogo} 
             alt="Chatbot" 
             className="w-full h-full object-cover rounded-full"
           />
@@ -146,7 +148,7 @@ export default function Chatbot() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                     <img 
-                      src="/src/assets/white.jpeg" 
+                      src={whiteLogo} 
                       alt="Specturn" 
                       className="w-8 h-8 rounded-full"
                     />

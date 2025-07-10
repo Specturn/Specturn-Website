@@ -4,6 +4,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { Button } from '../components/ui/button';
 import { Sun, Moon, Menu, X, User, LogOut } from 'lucide-react';
 import '../App.css';
+import whiteLogo from '../assets/white.jpeg';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -66,7 +67,7 @@ export default function Header() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/src/assets/white.jpeg" 
+              src={whiteLogo} 
               alt="Specturn Logo" 
               className="w-10 h-10 rounded-full"
             />
