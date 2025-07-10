@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import '../App.css';
 // Try alternative image import
-import blackLogo from '../assets/black.jpeg';
+import blackImg from '../assets/black.jpeg';
+import whiteImg from '../assets/white.jpeg';
 
 export default function JourneySection() {
   console.log('JourneySection component is rendering'); // Debug log
@@ -28,7 +29,7 @@ export default function JourneySection() {
           <div className="flex items-center justify-center h-full animate-fadeIn">
             <div className="relative flex items-center justify-center overflow-hidden w-[360px] h-[360px] rounded-full">
               <img
-                src={blackLogo}
+                src={blackImg}
                 alt="Specturn Logo"
                 className="object-cover w-full h-full rounded-full"
                 style={{ transform: 'scale(1.20)' }}

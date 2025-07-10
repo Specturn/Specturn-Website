@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import SimpleBackground from './SimpleBackground';
 import '../App.css';
+import blackImg from '../assets/black.jpeg';
+import whiteImg from '../assets/white.jpeg';
 
 export default function HeroSection() {
   const navigate = useNavigate();

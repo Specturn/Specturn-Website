@@ -5,6 +5,8 @@ import ProtectedRoute from './components/ProtectedRoute';
 import AdminRoute from './components/AdminRoute';
 import Chatbot from './components/Chatbot';
 import PagePreloader from './components/PagePreloader';
+import AuroraBackground from './components/AuroraBackground';
+import { AnimatePresence } from 'framer-motion';
 
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Home'));
@@ -37,35 +39,35 @@ function App() {
     <AuthProvider>
       <Router>
         <div className="App">
+          <AuroraBackground />
           <PagePreloader />
           <Suspense fallback={<LoadingSpinner />}>
-            <Routes>
-              {/* Public Routes */}
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/journey" element={<Journey />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/privacy" element={<Privacy />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/accessibility" element={<Accessibility />} />
-              
-              {/* Auth Routes */}
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              
-              {/* Admin Routes */}
-              <Route 
-                path="/admin" 
-                element={
-                  <AdminRoute>
-                    <AdminDashboard />
-                  </AdminRoute>
-                } 
-              />
-            </Routes>
+            <AnimatePresence mode="wait">
+              <Routes>
+                {/* Public Routes */}
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/journey" element={<Journey />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/terms" element={<Terms />} />
+                <Route path="/accessibility" element={<Accessibility />} />
+                {/* Auth Routes */}
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                {/* Admin Routes */}
+                <Route 
+                  path="/admin" 
+                  element={
+                    <AdminRoute>
+                      <AdminDashboard />
+                    </AdminRoute>
+                  } 
+                />
+              </Routes>
+            </AnimatePresence>
           </Suspense>
-          
           {/* Global Chatbot */}
           <Chatbot />
         </div>
