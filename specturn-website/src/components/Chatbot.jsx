@@ -64,10 +64,10 @@ export default function Chatbot() {
 
       const data = await response.json();
       
-      addMessage(data.response || "I'm sorry, I couldn't process your request. Please try again or contact us directly at specturnmedia@gmail.com", 'bot');
+      addMessage(data.response || "I'm sorry, I couldn't process your request. Please try again or contact us directly at help@specturn.in", 'bot');
     } catch (error) {
       console.error('Chatbot error:', error);
-      addMessage("I'm experiencing some technical difficulties. Please contact us directly at specturnmedia@gmail.com for immediate assistance.", 'bot');
+      addMessage("I'm experiencing some technical difficulties. Please contact us directly at help@specturn.in for immediate assistance.", 'bot');
     } finally {
       setIsLoading(false);
     }
