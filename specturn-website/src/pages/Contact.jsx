@@ -64,12 +64,6 @@ export default function Contact() {
       href: 'mailto:contact@specturn.in'
     },
     {
-      icon: Phone,
-      title: 'Phone',
-      content: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
-    },
-    {
       icon: MapPin,
       title: 'Location',
       content: 'Remote & Worldwide',
